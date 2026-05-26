@@ -6,3 +6,16 @@ plugins {
   alias(libs.plugins.roborazzi) apply false
   alias(libs.plugins.secrets) apply false
 }
+
+tasks.register<Zip>("zipProject") {
+    archiveFileName.set("project.zip")
+    destinationDirectory.set(rootDir)
+    from(rootDir) {
+        exclude(".git/**")
+        exclude(".gradle/**")
+        exclude(".idea/**")
+        exclude("**/build/**")
+        exclude(".build-outputs/**")
+        exclude("**/*.zip")
+    }
+}
