@@ -21,7 +21,7 @@ class GreetingScreenshotTest {
 
   @Test
   fun greeting_screenshot() {
-    composeTestRule.setContent { MyApplicationTheme { DiaryScreen() } }
+    composeTestRule.setContent { MyApplicationTheme { DiaryMainContainer() } }
 
     composeTestRule.onRoot().captureRoboImage(filePath = "src/test/screenshots/diary_design.png")
   }
